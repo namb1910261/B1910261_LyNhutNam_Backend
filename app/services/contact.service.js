@@ -70,6 +70,10 @@ class ContactService {
         return await this.find({ favorite: true });
     }
 
+    async findNotFavorite() {
+        return await this.find({ favorite: false });
+    }
+
     async deleteAll() {
         const result = await this.Contact.deleteMany({});
         return result.deletedCount;

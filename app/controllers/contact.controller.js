@@ -104,6 +104,19 @@ exports.findAllFavorite = async (_req, res, next) => {
     }
 };
 
+// Find all not favorite contacts of a user
+exports.findAllNotFavorite = async (_req, res, next) => {
+    try {
+        const contactService = new ContactService(MongoDB.client);
+        const documents = await contactService.findNotFavorite();
+        return res.send(documents);
+    } catch (error) {
+        return next(
+            new ApiError(500, "An error occurred while retrieving not favorite contacts")
+        );
+    }
+};
+
 // Delete all contacts of a user from the database
 exports.deleteAll = async (_req, res, next) => {
     try {

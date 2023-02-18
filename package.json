@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "script": {
+  "scripts": {
     "start": "nodemon server.js"
   },
   "author": "B1910261",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongodb": "^4.13.0"
